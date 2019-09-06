@@ -13,5 +13,5 @@ exports.up = function(knex) {
 }
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('authors_books')
+  return knex.schema.dropTable('equipment_scheduling')
 }
