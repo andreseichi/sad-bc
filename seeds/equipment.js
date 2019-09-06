@@ -1,4 +1,4 @@
-const seedes = require('./seeds_data/equipment')
+const seeds = require('./seeds_data/equipment')
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('equipment')
