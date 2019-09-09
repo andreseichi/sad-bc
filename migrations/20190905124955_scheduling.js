@@ -16,10 +16,12 @@ exports.up = function(knex, Promise) {
       .notNullable()
       .defaultTo('')
     table
-      .string('event')
+      .string('eventName')
       .notNullable()
       .defaultTo('')
     table.date('eventDate').notNullable()
+    table.string('beginIn').notNullable()
+    table.string('endIn').notNullable()
   })
 }
 
