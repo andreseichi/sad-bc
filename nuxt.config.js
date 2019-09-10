@@ -1,5 +1,5 @@
 const pkg = require('./package')
-
+const config = require('./server/config')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
@@ -9,15 +9,14 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'SAD-BC',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Sistema de Agendamento de Autditório da Biblioteca Central da UFPA'
+        content: process.env.npm_package_description || ''
       }
     ],
     link: [
@@ -59,7 +58,18 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
+  devModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
+  ],
   modules: [],
+
+  /*
+   ** Environment configuration
+   */
+  env: {
+    config
+  },
 
   /*
    ** Build configuration

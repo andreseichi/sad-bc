@@ -82,3 +82,7 @@ dist
 
 # Service worker
 sw.*
+
+# db
+*.sqlite3
+*.sqlite3-journal
