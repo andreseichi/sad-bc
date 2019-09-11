@@ -36,10 +36,7 @@ authz.unless = unless
 api.use(
   authz.unless({
     custom: ctx => {
-      return (
-        ctx.path.includes('auth') ||
-        (ctx.path.includes('equipment') && ctx.method === 'GET')
-      )
+      return ctx.path.includes('auth')
     }
   })
 )
