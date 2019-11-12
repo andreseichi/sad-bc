@@ -6,7 +6,8 @@ const Schema = use('Schema')
 class UsersSchema extends Schema {
   up() {
     this.create('users', (table) => {
-      table.increments('email').notNullable().unique()
+      table.increments()
+      table.string('email').notNullable().unique()
       table.string('name').notNullable()
       table.string('surname')
       table.date('birthday', { precision: 6 })
@@ -15,8 +16,8 @@ class UsersSchema extends Schema {
       table.enum('role', [
         'admin',
         'member',
-        'event-mananger'
-      ]).notNullable().defaultTo('event-mananger')
+        'event-manager'
+      ]).notNullable().defaultTo('event-manager')
       table.timestamps()
     })
   }
