@@ -15,4 +15,8 @@
 
 const Route = use('Route')
 
+Route.group('api', () => {
+  Route.get('/events', 'App/Models/EventController.index')
+})
+
 Route.any('*', 'NuxtController.render')
